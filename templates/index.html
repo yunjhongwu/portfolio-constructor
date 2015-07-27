@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+
+    <link type="text/css" rel="stylesheet" href="css/layout.css">
+    <link type="text/css" rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.multiselect/1.13/jquery.multiselect.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.multiselect/1.13/jquery.multiselect.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+
+    <script src="js/init.js"></script>
+    <script src="js/panel.js"></script>
+    <script src="js/visuals.js"></script>
+
+    <title>Past performance is no guarantee of future results.</title>
+
+</head>
+
+<body>
+    <div id="panel">
+        From
+        <input type="text" id="start-date" autocomplete="off"> 
+        To
+        <input type="text" id="end-date" autocomplete="off"> 
+        Add
+        <input type="text" id="ticker" style="width: 70px" autocomplete="off" title="Type to add tickers here">
+        <select id="symbols" class="multiselect" multiple="multiple" size="1">
+        </select>
+        Currency
+        <input type="checkbox" id="Currency" checked>
+        <input type="number" id="rate" min="-10" max="10" step="0.01" value="0.01" autocomplete="off" title="Interest rate"> 
+        Short
+        <input type="checkbox" id="shor" autocomplete="off"> 
+        Risk
+        <input type="range" id="risk" min="0" max="1" step="0.1" value="0.5" title="Slide right if you are willing to take more risk."> 
+        Equipartition
+        <input type="range" id="l2" min="0" max="1" step="0.1" value="0.5" title="Slide right to avoid overfitting."> 
+        Rebalancing 
+        <select id="rebalancing" autocomplete="off" disabled>
+            <option value="0">None</option>
+            <option value="3">Quarterly</option>
+            <option value="6">Half-yearly</option>
+            <option value="12">Yearly</option>
+        </select>
+
+        <input type="submit" id="quote" value="Quote">
+        <input type="submit" id="reset" value="Reset">
+
+    </div>
+
+    <div id="visuals">
+        <div id="plots">
+            <div id="trend-plot" class="plot">
+            </div>
+            <div id="frontier-plot" class="plot">
+            </div>
+        </div>
+        <div id="piechart">
+        </div>
+    </div>
+
+    <div id="loading">
+        <h1 style="color: lightgrey"> <span id="progress"> Pulling data...</span></h1>
+    </div>
+
+</body>
+</html>
