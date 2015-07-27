@@ -73,7 +73,7 @@ def getPortfolio(df, unused, lbd, short=False, l2=0):
         allocation[category(p)].append({ "symbol": df.columns[i], "p": p })
 
     allocation["ret"] = (ret.dot(pos) ** ( 365 / T ) - 1) * 100
-    allocation["vol"] = np.sqrt(pos.dot(vol).dot(pos)) * ( 365 / T ) * 100
+    allocation["vol"] = np.sqrt(pos.dot(vol).dot(pos)) * np.sqrt( 365 / T ) * 100
     allocation["status"] = sol["status"]
     
     return jsonify(allocation)    
@@ -96,7 +96,7 @@ def getRebalance(df, freq, pos):
     return jsonify({ "min": perf["value"].min(),
                      "max": perf["value"].max(),
                      "ret": (perf["value"].iloc[-1] ** (365 / perf["value"].size) - 1) * 100,
-                     "vol": np.std(dailyret) * 365 / dailyret.size * 100,
+                     "vol": np.std(dailyret) * 1910.5,
                      "series": perf.T.to_json() })
 
 def getFrontier(df, short):
@@ -120,7 +120,7 @@ def getFrontier(df, short):
         if sol["status"] == "optimal":
             pos = np.array(sol['x']).ravel()[:k]
             frontier[i] = { "ret": (alpha ** ( 365 / T ) - 1) * 100, 
-                            "vol": np.sqrt(pos.dot(vol).dot(pos)) * ( 365 / T ) * 100 }
+                            "vol": np.sqrt(pos.dot(vol).dot(pos)) * np.sqrt( 365 / T ) * 100 }
 
     return jsonify(frontier)
 
@@ -155,7 +155,7 @@ def pullDataFromYahoo(symbol, startdate, enddate):
         dailyret = dailyret[1:] / dailyret[:-1]
         return jsonify({ "series": data.drop("index", 1).T.to_json(),
                             "ret": (data["value"].iloc[-1] ** ( 365 / data["value"].size ) - 1) * 100,
-                            "vol": np.std(dailyret) * 365 / dailyret.size * 100 })
+                            "vol": np.std(dailyret) * 1910.5 })
 
     except:
         return "invalid"

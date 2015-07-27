@@ -2,7 +2,7 @@
  * Construct portfolios by constrained quadratic optimization --- minizing volatility, maxizing returns, and reducing over-fitting by encouraging to equally invest in all positions.
  * Price data is sourced from Yahoo finance.
 
-![alt tag](https://cloud.githubusercontent.com/assets/6327275/8896824/9c7bf642-33bc-11e5-9e01-02880054d53d.png)
+![alt tag](https://cloud.githubusercontent.com/assets/6327275/8897664/0f2008da-33ce-11e5-8ee9-efa2cc0f9ac5.png)
 
 1. Frontend tested in Chrome 44 and Firefox 39
  * Some D3.js animation are turned off in Firefox.

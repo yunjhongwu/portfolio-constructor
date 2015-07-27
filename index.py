@@ -57,4 +57,3 @@ def rebalancing():
 if __name__ == '__main__':
     solvers.options['show_progress'] = False
     app.run(debug=True)
-    #app.run(host='0.0.0.0')

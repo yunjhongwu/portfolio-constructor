@@ -233,7 +233,7 @@
                         $("#symbols option[value=" + d.symbol + "]")).is(":checked") ? "visible" : "hidden";
                 });
 
-            svgtrend.select("#line-pos, #line-rebalancing")
+            svgtrend.selectAll("#line-pos, #line-rebalancing")
                 .transition().duration(400)
                 .attr("d", getLine(pos.series));
 
@@ -293,8 +293,8 @@
                 .attr("stroke-width", 3);
 
             var slices = svgpie.select("#pie-" + d.symbol + ", #pietext-" + d.symbol);
-            if ($.browser.chrome)
-                slices.transition().duration(400);
+            if ($.browser.chrome || animation)
+                slices = slices.transition().duration(400);
             slices.attr("transform", "scale(1.2)");
         }
 
@@ -304,8 +304,8 @@
                 .attr("opacity", 0.4)
                 .attr("stroke-width", 2);
             var slices = svgpie.select("#pie-" + d.symbol + ", #pietext-" + d.symbol);
-            if ($.browser.chrome)
-                slices.transition().duration(400);
+            if ($.browser.chrome || animation)
+                slices = slices.transition().duration(400);
             slices.attr("transform", "scale(1)");
 
 

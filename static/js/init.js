@@ -11,6 +11,7 @@ var xAxis, yAxis, fxAxis, fyAxis;
 var getLine, getFrontierLine;
 var pie;
 var arclong, arcshor;
+var animation = false;
 
 $(function() {
     d3.selectAll(".plot")
