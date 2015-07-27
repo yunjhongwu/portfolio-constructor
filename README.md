@@ -2,6 +2,8 @@
  * Construct portfolios by constrained quadratic optimization --- minizing volatility, maxizing returns, and reducing over-fitting by encouraging to equally invest in all positions.
  * Price data is sourced from Yahoo finance.
 
+![alt tag](https://cloud.githubusercontent.com/assets/6327275/8896824/9c7bf642-33bc-11e5-9e01-02880054d53d.png)
+
 1. Frontend tested in Chrome 44 and Firefox 39
  * Some D3.js animation are turned off in Firefox.
 
@@ -19,7 +21,5 @@
  * Click red circles in the panel of "efficient frontier" to get constructed portfolios.
 
 4. (Over-)simplification about this constructor
- * Reinvest dividends
- * Ignore tax, commission fees, and price spreads and fluctuation in a day
-
-![alt tag](https://cloud.githubusercontent.com/assets/6327275/8896824/9c7bf642-33bc-11e5-9e01-02880054d53d.png)
+ * Reinvest dividends.
+ * Ignore tax, commission fees, price spreads, and price fluctuation in a day.
