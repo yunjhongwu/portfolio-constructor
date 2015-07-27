@@ -50,7 +50,7 @@
             }
         });
 
-        $.get("data/init_sample").done(function(tickers) {
+        $.get("data/init_symbols").done(function(tickers) {
             var multiselect = $("#symbols");
             tickers.toUpperCase().split('\n')
                 .forEach(function(ticker) {
