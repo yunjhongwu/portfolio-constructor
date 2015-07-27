@@ -70,6 +70,14 @@ function quote() {
     $.when.apply(null, quotes).done(function() {
         d3.select("#progress").text("Processing data...");
         symbols.push("Currency");
+        if (symbols.length < 21)
+            colors = (symbols.length < 11) ? d3.scale.category10() : d3.scale.category20();
+        else {
+            var cmap = new Object;
+            symbols.forEach( function(d) { cmap[d] = "hsl(" + Math.random() * 360 + ", 100%, 50%)"; });
+            colors = function(d) { return cmap[d]; };
+        }
+
         fit(true);
     });
 }

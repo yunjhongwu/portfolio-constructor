@@ -3,7 +3,7 @@ var data = new Object;
 var pos, rbperf;
 var startdate, enddate;
 var dateFormat = d3.time.format("%Y-%m-%d");
-var colors = d3.scale.category10();
+var colors;
 
 var svgtrend, svgfro, svgpie;
 var width, height;
