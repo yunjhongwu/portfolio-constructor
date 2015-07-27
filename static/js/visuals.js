@@ -306,7 +306,7 @@ function highlight(d) {
         .attr("opacity", 1)
         .attr("stroke-width", 3);
 
-    var slices = svgpie.select("#pie-" + d.symbol + ", #pietext-" + d.symbol);
+    var slices = svgpie.selectAll("#pie-" + d.symbol + ", #pietext-" + d.symbol);
     if ($.browser.chrome || animation)
         slices = slices.transition().duration(400);
     slices.attr("transform", "scale(1.2)");
@@ -317,7 +317,7 @@ function unhighlight(d) {
     svgtrend.select("#line-" + d.symbol)
         .attr("opacity", 0.4)
         .attr("stroke-width", 2);
-    var slices = svgpie.select("#pie-" + d.symbol + ", #pietext-" + d.symbol);
+    var slices = svgpie.selectAll("#pie-" + d.symbol + ", #pietext-" + d.symbol);
     if ($.browser.chrome || animation)
         slices = slices.transition().duration(400);
     slices.attr("transform", "scale(1)");
