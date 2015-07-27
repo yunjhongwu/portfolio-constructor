@@ -11,6 +11,7 @@
  * Cvxopt 1.1.7
  * Flask 0.10.1
  * Numpy 1.9.2
+ * Pandas 0.16.2
 
 3. Get start using the constructor
  * Run "python3 index.py" in terminal.
