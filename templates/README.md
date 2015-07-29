@@ -13,7 +13,7 @@
  * Numpy 1.9.2
  * Pandas 0.16.2
 
-3. Get started
+3. Get start
  * Run "python3 index.py" in terminal.
  * Open 127.0.0.1:5000 in a browser.
  * Select start- and end-date; add more tickers.
