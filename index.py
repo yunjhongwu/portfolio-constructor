@@ -12,7 +12,7 @@ from cvxopt import solvers
 from datetime import datetime
 from flask import Flask, render_template, request
 
-from py.portfolio import getData, getPortfolio, getFrontier, getRebalance, pullDataFromYahoo
+from static.py.portfolio import getData, getPortfolio, getFrontier, getRebalance, pullDataFromYahoo
 
 app = Flask(__name__, static_folder='static', static_url_path='')
 
