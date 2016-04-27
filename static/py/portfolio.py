@@ -6,8 +6,7 @@
 
 import numpy as np
 import pandas as pd
-import pandas.io.data as pull
-
+from pandas_datareader import data as pull
 from cvxopt import matrix, solvers
 from datetime import datetime
 from flask import jsonify, request
